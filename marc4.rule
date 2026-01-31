@@ -1,0 +1,20 @@
+rule marc4code {
+  meta:
+    description = "MARC4 Firmware"
+
+  strings:
+    //Filler from MARC4 assembler.
+    //scall $RESET
+    $c1 = {C1 C1 C1 C1 C1 C1}
+
+    //Autosleep handler, ought to be address zero.
+    $autosleep = {7c 0f 19 80 c1 c1 c1 c1}
+
+    //Sets stack pointer and return pointer.
+    $reset1 = {78 ?? 79 ??}
+    $reset2 = {79 ?? 78 ??}
+
+
+  condition:
+    $c1 and ($reset1 or $reset2) and $autosleep
+}

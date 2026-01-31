@@ -1,0 +1,6 @@
+
+*.bin
+*~
+atar862n-rom.txt
+atar862n-rom.lst
+.goodasm_history
