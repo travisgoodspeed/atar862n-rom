@@ -12,11 +12,8 @@ MaskRomTool and to Adam Laurie, whose [Fun with Masked
 ROMs](https://adamsblog.rfidiot.org/2013/01/fun-with-masked-roms.html)
 article was the first public description of the bit layout.
 
-As of January 2026, the decoding is not quite correct.  It should
-begin with `7c 0f 19 80`, and the `--decode-marc4 -i` setting produces
-these bytes in reverse order at the very end of the image, coming from
-the bottom-right corner of the photograph.  Solving with `marc4.rule`
-shows that these bytes do occur in the `-i -r 180 --flipx` decoding,
-but they occur at 0x1300 instead of 0.
+As of February 2026, the decoding is correct!  Solving with the
+`marc4.rule` YARA-X rule correctly finds these settings as the first
+of two matches.
 
 --Travis

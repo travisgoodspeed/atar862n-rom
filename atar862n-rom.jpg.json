@@ -10196,7 +10196,7 @@
         "bitsize": 10,
         "blue": 0,
         "crosshaircolor": "#888888",
-        "gatorom": "--decode-marc4 -i -r 180 --flipx ",
+        "gatorom": "--decode-marc4 -i -r 180 ",
         "green": 89,
         "inverted": false,
         "linecolor": "#000000",
